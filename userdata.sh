@@ -8,5 +8,5 @@ apt install git -y
 
 cd /home/ubuntu
 git clone https://github.com/liormilliger/prometheus-data-collector.git
-
+cd prometheus-data-collector
 docker-compose up -d
