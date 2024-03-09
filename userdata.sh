@@ -7,7 +7,6 @@ usermod -aG docker ubuntu
 apt install git -y
 
 cd /home/ubuntu
-git clone https://github.com/liormilliger/linux-srv-data-collection.git
+git clone https://github.com/liormilliger/prometheus-data-collector.git
 
-cd promehteus
 docker-compose up -d
