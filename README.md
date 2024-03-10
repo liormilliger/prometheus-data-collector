@@ -1,7 +1,7 @@
 
 # EC2 Linux Server Microservices for Prometheu stack metrics exposed via Python Flask app 
 
-![image](https://github.com/liormilliger/prometheus-data-collector/assets/64707466/ec9c6465-b854-435b-8050-54ff85ecd403)
+![image](https://github.com/liormilliger/prometheus-data-collector/assets/64707466/bc665b21-21fb-4bc9-9999-72f25538513a)
 
 ### This repo contains a closed system for launching microservices
 
