@@ -37,8 +37,8 @@ def prometheus_service():
 
     # Creating JSON response
     response_data = {
-        'memory_usage': f'{int(mem_value) / 1000} MB',
-        'disk_status': f'{int(disk_value) / 1000} MB free',
+        'memory_usage': f'{int(mem_value) / 1000000000} GB',
+        'disk_status': f'{int(disk_value) / 1000000000} GB free',
         'cpu_usage': f'{cpu_value} % CPU in use'
 
         }
