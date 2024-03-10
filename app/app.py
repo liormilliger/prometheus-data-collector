@@ -9,7 +9,6 @@ prometheus_url = "http://prometheus:9090/api/v1/"
 mem_usage = "query?query=node_memory_MemTotal_bytes - node_memory_MemFree_bytes"
 cpu_usage = "query?query=100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m])) by (instance) * 100)"
 disk_status = "query?query=node_filesystem_size_bytes{fstype!~'tmpfs|squashfs'} - node_filesystem_free_bytes{fstype!~'tmpfs|squashfs'}"
-
  
 # mem_usage_query = "query?query=node_memory_MemTotal_bytes+-+node_memory_MemFree_bytes"
 # disk_usage_query = "query?query=node_filesystem_size_bytes%7Bfstype%21%7E%27tmpfs%7Csquashfs%27%7D+-+node_filesystem_free_bytes%7Bfstype%21%7E%27tmpfs%7Csquashfs%27%7D"
@@ -36,10 +35,10 @@ def prometheus_service():
         mem_value = "ERROR: Failed to retrieve system data from Prometheus"
 
     # Logic for Diskspace Data
-    disk_response = requests.get(prometheus_url + disk_status)
+    disk_response = requests.get(prometheus_url + disk_statux)
     disk_data = disk_response.json()
     if disk_data["status"] == "success":
-        disk_value = float(cpu_data["data"]["result"][0]["value"][1])
+        disk_value = float(disk_data["data"]["result"][0]["value"][1])
     else:
         disk_value = "ERROR: Failed to retrieve system data from Prometheus"
 
