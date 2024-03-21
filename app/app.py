@@ -8,7 +8,7 @@ prometheus_api = "http://prometheus:9090/api/v1/"
 
 
 metrics = {
-    "mem_usage": "query?query=(1 - (node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes + node_memory_SReclaimable_bytes) / node_memory_MemTotal_bytes)*100",
+    "mem_usage": "query?query=(node_memory_Active_bytes/node_memory_MemTotal_bytes*100)",
     "cpu_usage": "query?query=(sum by (cpu)(rate(node_cpu_seconds_total{mode!='idle'}[5m]))*100)",
     "disk_status": "query?query=  (1 -(node_filesystem_free_bytes  {mountpoint='/etc/hostname'}/ node_filesystem_size_bytes {mountpoint='/etc/hostname'})) * 100 "
 }
